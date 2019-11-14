@@ -1,0 +1,9 @@
+glVertexAttribPointer() tells the computer that this is the layout of my memory. 
+A vertex contains vertex positions and a whole lot of other data. Vertex Positions and Vertex are not same as far as we are concerned in OpenGL.
+
+Now that we have the attributes to the vertex added, let's add the code to the GPU to make it understand about the vertices. 
+
+The vertex shader gets called for each vertex and the fragment shader gets called for each fragment. Therefore any calculation inside the shader is going to get called a lot of times. 
+
+Finally, let's write the vertex shaders. 
+We wrote the vertex and fragment shaders in the same file and segregated them programatically. 

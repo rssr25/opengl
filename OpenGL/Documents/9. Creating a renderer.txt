@@ -1,0 +1,17 @@
+Now we have our bunch of programs that we have created but they are not going through a central pipeline.
+Currently, we are creating the render pipeline by ourselves and that is bad as we go to the complex projects in OpenGL
+we are going to face a lot of redundant code. 
+
+It will make the code easier to debug, very organized if we create a central renderer. 
+
+A renderer is like the factory. "Here are some parts, make something for me"
+So, we have a bunch of data with us: Vertex buffer, index buffer, blah blah and we need to give it to
+someone and say "this stuff that I am giving you, I want you to show it to the screen. "
+THAT SOMEONE IS THE RENDERER.
+
+What do we need to put in the renderer? What we need to draw.
+For drawing we need: VertexArray, IndexBuffer, Shader (vertexbuffer is already bound to the vertex array)
+
+So we did all that (and even fell into teh problem of cyclic includes, but we solved it) we see that the Uniforms
+can't be abstracted in the class. This problem can be solved by using MATERIALS. Materials are (Shader + data)
+which means we can have the shader code and also attach its uniforms with it. 

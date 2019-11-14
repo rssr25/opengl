@@ -1,0 +1,24 @@
+Texture is essentially an image that we use when we are rendering something.
+I can make an image, and upload it to the GPU memory and then use it in the shader. 
+
+1. We load our image
+2. Convert it to texture using OpenGl
+3. Bind that texture
+4. Bind that texture with the shader using a slot we bound our texture to
+5. Sample that texture in our shader
+6. When we draw a rectangle, we should see the texture
+
+In OpenGL we have verious slots that we can bind textures to. It depends on the device and platform and actual gpu you have. On computer we have
+32 slots, on a mobile phone we may have 8 slots. Modern GPUs have 32, mobile GPUs have roughly 8
+
+Set the texture parameters. Then load it to OpenGL. Internal format and format have huge differences. Internalformat
+will tell OpenGL how to deal with the data (GL_RGBA8) while the format is the format of the data that you're
+providing your opengl with.
+
+Now, we need to tell the shader which texture slot to sample from and the way we do it is using uniforms. So we add that
+function in shaders. This function takes in an Int passes it to the GPU. this int will tell GPU where the sampler
+for the texture is.
+
+Next we need to tell what are the texture coordinates
+WE DID IT! WE HAVE A PICTURE AS A TEXTURE. 
+The alpha channel may not get properly rendered until we enable the Blending in OpenGL. Let's enable it then.

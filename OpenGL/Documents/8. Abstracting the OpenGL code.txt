@@ -1,0 +1,19 @@
+1. Renderer
+2. Vertex Buffers
+3. Index Buffers
+4. Vertex Arrays
+
+What is the purpose of the abstraction? So that you can say that these are the things that I need. 
+Based on those things now let's build the functionalities.
+
+For us what the vertex array needs to do is hopefully tie the vertex buffer with some kind of layout.
+
+So what we want to do include in vertex array abstraction is the information about the vertex buffers and
+their layouts. 
+
+Next up is the abstraction of the Shader code. So what exactly we need to abstract in out shader code?
+1. Pass a file and have that be compiled as a shader
+2. We want to be able to bind and unbind the shader
+3. We want to be able to assess the all the different uniforms for the shader.
+
+That's probably it for something that we are doing right now. 

@@ -1,0 +1,16 @@
+Now when we draw a square, two of the vertices will repeat their values. This means that there is redundancy. We use index buffers to solve this problem of duplication of data and save memory. 
+
+Essentially we have all the unique vertices in a vertex buffer and we make an indices array having the values in the fashion that we want the vertices to draw in. This array is provided to a buffer which is created in the same way the vertex buffer was. 
+
+unsigned int ibo;
+glGenBuffers(1, &ibo);
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, buffer);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW);
+
+Next we want to change the glDrawArrays(0, 3) function. 
+
+Write glDrawElements(GL_TRIANGLES, 6) 6 is the number of indices that we are drawing not the number of vertices we want to draw like glDrawArrays.
+
+THE INDICES HAVE TO BE unsigned int. ANY KIND OF INDICES BUFFER IS GOING TO BE ONLY unsigned int.
+
+---- now we need to know about the errors in OpenGL and how to handle them. Let's handle them errors bitches!

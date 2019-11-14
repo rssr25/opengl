@@ -1,0 +1,12 @@
+Now that the setup is ready, we can begin calling opengl functions. But these function implementations are provided by the GPU manufacturers instead of Windows (which only supports OpenGL 1.1 natively). This means that we need a way to get into the GPU manufacturer's implementations to use Modern OpenGL (or any greater version of OpenGL on windows). 
+
+We can essentially do this ourselves but we have an API for that. This is called GLEW or OpenGL Extension Wrangler. These libraries access the functions that are already implemented on our GPU driver in the binary form. 
+
+So download that from glew.sourceforge.net/
+
+Add the Folder (extracted and renamed to GLEW) to the Dependencies folder we created earlier
+Add the Additional Include Directories and Liker Directories and Input linking in the Project Properties.
+
+Add the GLEW_STATIC Preprocessor in C/C++ > Preprocessor (we are using static library)
+
+Let's make our first triangle. 

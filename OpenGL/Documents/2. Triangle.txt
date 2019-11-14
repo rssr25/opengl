@@ -1,0 +1,16 @@
+In legacy opengl (which I did in college), the creation of triangle was a piece of cake. Now with modern gl, to create a Triangle, you need two things:
+1. Vertex Buffer: An array of bytes of memory in the GPU 
+2. Shader: just a program that runs on the GPU
+
+OpenGL works like a state machine. What we mean by this is that you set a series of states. Essentially you say:
+"Hey I want you to select this buffer"
+"I want you to select this shader" 
+"now I want you to draw a triangle"
+
+Based on which buffer and which shader is selected determines what triangle is going to be drawn. Knowing this is VERY CRITICAL. 
+
+DOCUMENTATION: docs.gl website
+
+In openGL you have to BIND EVERYTHING because that's how it is going to work. 
+Let's write the shader for the triangle now. 
+

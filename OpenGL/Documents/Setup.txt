@@ -1,0 +1,21 @@
+Create the empty project.
+Download GLFW from website as a windows binary
+Create the src folder in the "Show all files" view of the solution explorer
+Add main.cpp and write the GLFW test program in it.
+
+In the directory where the .sln file is, create a folder called "Dependencies > GLFW"
+In this folder copy the "include" and "lib-vc2017" folders
+Now we have to link these to the visual studio.
+
+
+Go to project's properties > C/C++ > General > Additional Include Directories (Make sure the Configuration is "All Configurations")
+Write "$(SolutionDir)Dependencies\GLFW\include"
+
+Then Linker > General > Additional Library Directories and add "$(SolutionDir)Dependencies\GLFW\lib-vc2017"
+Then Linker > Input > Remove everything from Additional Dependencies because they are included by default
+Then Linker > Input > Additional Dependencies > Add "glfw3.lib"
+
+Hit ok.
+
+The program will compile successfully but not link so if you build it's gonna give a lot of errors. This is because we haven't linked OpenGL as of now. So let's do that. 
+Then Linker > Input > Additional Dependencies > Add "opengl32.lib"

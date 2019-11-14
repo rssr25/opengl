@@ -1,0 +1,21 @@
+Uniforms are a way of giving the data from the CPU side to the GPU side. Well, we have also seen that when we used vertex buffers. There are two main ways to pass data from the CPU to GPU: Uniforms and Attributes
+
+Let's get on with it. 
+
+To compare between the Uniforms and the vertex Buffers (attributes):
+
+1. Uniforms are set per draw so you can set uniforms before you call glDrawElements (glDraw'X') functions. The attributes are simple and can be set anywhere (positions[] attribute in the code). Uniforms have to be set before drawing. 
+
+The shader code involves: "uniform dataType variableName"
+
+This uniform setting in C++ should have the same name and the type and should be created after the shader has been bound. 
+We used glUniform4f because we knew that we have a vector of 4 float channels of a color. 
+We need to find the location of the uniform variable in the shader code to let C++ know where the heck it has to send the data. 
+
+glGetUniformLocation() will do that for us. 
+
+Uniforms are Per Draw.
+Uniforms are essential part of OpenGL programming. 
+
+Since Uniforms are per draw call, you can't make two triangles have different colors. 
+We can use Vertex Attributes for that. 

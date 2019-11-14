@@ -1,0 +1,9 @@
+Vertex array objects are going to actually bind your vertex buffers with the layouts provided by you in the glVertexAttribPointer() function. This happens by default (with only one Vertex Array) in the OPENGL Compatibility profile. But if you are in the core profile, having no vertex array is going to give an error.
+
+Vertex arrays also eliminate the need of creating layouts every time the vertex data is changed. 
+Vertex Array Objects are unique to OpenGL as other graphics APIs don't have this functionality.
+
+1. You can have one global VAO and then specify the layout for each vertex buffer that you have. OR
+2. You can have a separate VAO for each piece of geometry that you have in your project
+
+Which one is more optimal? 

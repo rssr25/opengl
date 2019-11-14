@@ -1,0 +1,20 @@
+There are two main ways to check for errors in OpenGL.
+1. glGetError(): a function that we can call. Been in opengl since the beginning. Returns Flags for each errors that may be occuring. 
+
+2. glDebugMessageCallback
+
+Here we are talking about the glGetError() only. 
+glGetError gives the error code back if there is any. This code is given to us in the integer format. But glew maintains these errors in hexadecimal format. 
+
+We can get teh hexadecimal version of the error code to look in the glew.h
+But, this still does not give us in which line the error occurred. 
+
+And to do that, we need to have the checking mechanism for each function call that we are going to make in the entire fucking source code. 
+
+We can get the line of the code where the error has occurred using an ASSERT statement. So we are going to create a macro
+
+#define ASSERT(x) if(!(x)) __debugBreak(); __ tells that this statement is compiler intrinsic. Won't work in clang, GCC and all. This is microsoft compiler we are working in right now, so it will work.
+
+We essentially created a macro that breaks the debugger when an OpenGL error occurs. 
+
+Now, you understand the importance of MACROS.
