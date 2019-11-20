@@ -5,3 +5,35 @@ Let's have an intro to projection in code.
 In Orthographic projection things don't get smaller if they are farther away unlike perspective projection.
 Now we have our orthographic projection matrix, let's give it to teh GPU to do the matrix multiplications for us. 
 We call it modelViewProjection matrix.
+
+PROJECTION MATRIX IN OPENGL:
+This is one of the biggest things we need to solve when it comes to rendering graphics on the screen. It is part of the transformation pipeline. 
+Projection is just how we go from having some kind of arbitrary coordinate system in the 3D world to the window. Projection is essentially a way to map
+the coordinate space points to the window on the screen during rendering. We may have a lot od assets of 3D world, but somehow they have to be rendered on our 2D monitor
+in a window. That is what projection is. It is math that convertes all those 3D points into a 2D window viewable objects. 
+
+We have two kinds of projections:
+1. Orthographic projection: "Usually" used for 2D
+2. Perspective Projection: "Usually" used for 3D
+
+They essentially convert the vertex position from the 3D space coordinates to normalized device coordinates. 
+
+MODEL VIEW PROJECTION MATRICES IN OPENGL:
+There are two other matrices which are important for us to learn about whenever we render complex geometry in a scene. 
+1. View Matrix
+2. Model Matrix
+
+all three (MVPs) get multiplied by the vertex positions and get converted to the normalized device coordinates. 
+This is the sort of the transformation pipeline. Each of the M, V and P are separate matrices.
+All these matrices get multiplied in that order (M X V X P). In OpenGL we do column major ordering. (In direct X we have row-major order)
+These matrices kind of define different things for the vertices. We do (MxVxP) and then the resulting matrix is multiplied with the vertex position.
+
+View Matrix: is kind of like the view of the camera. The position, rotation etc of the camera
+Model Matrix: Position, rotation, scale of our actual model
+
+glm::mat4 proj = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f); //4:3 aspect ratio
+glm::mat4 view = glm::translate(glm::mat4(1.0), glm::vec3(-100, 0, 0));
+glm::mat4 model = glm::translate(glm::mat4(1.0), glm::vec3(200, 200, 0));
+glm::mat4 mvp = proj * view * model;
+
+Muliply in PVM way in OpenGL because the multiplication happens in column major. 
