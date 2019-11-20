@@ -1,1 +1,7 @@
 GLM is a header file library, so we don't need to create linker directories and stuff. 
+A projection matrix is a way to tell our window how we want to draw all the vertices in it.
+Let's have an intro to projection in code. 
+
+In Orthographic projection things don't get smaller if they are farther away unlike perspective projection.
+Now we have our orthographic projection matrix, let's give it to teh GPU to do the matrix multiplications for us. 
+We call it modelViewProjection matrix.

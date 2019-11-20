@@ -10,6 +10,9 @@
 #include "VertexArray.h"
 #include "Shader.h"
 #include "Texture.h"
+#include "glm\glm.hpp"
+#include "glm\gtc\matrix_transform.hpp"
+
 
 int main(void)
 {
@@ -62,9 +65,13 @@ int main(void)
 
 		IndexBuffer ib(indices, 6);
 
+		//intro to projection, we just have an orthographic projection matrix here
+		glm::mat4 proj = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f); //4:3 aspect ratio
+
 		Shader shader("res/shaders/Basic.shader");
 		shader.Bind();
 		shader.setUniform4f("u_Color", 0.0f, 0.0f, 0.5f, 1.0f);
+		shader.setUniformMat4f("u_MVP", proj);
 
 		Texture texture("res/Textures/jigsaw.png");
 		texture.Bind();
