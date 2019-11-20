@@ -1,0 +1,18 @@
+Last time we discussed about the loading of a texture in OpenGL. In the end we did some two lines of code that added some blending.
+Let's understand what actually blending is. 
+Blending is pretty simple. When we render something that is partially or fully transparent, how do we do that? (Blending). By default OpenGL doesn't perform
+any kind of blending. We need to tell what we want to do. 
+
+Blending determines how we "combine" our "output" color with what is already in the "target" buffer
+Output = the color we output from the fragment shader (known as soruce)
+Target Buffer = the buffer our fragment shader is drawing to (known as destination)
+
+HOW DO WE CONTROL BLENDING?
+There are three ways to do that in OpenGL:
+	1. glEnable(GL_BLEND) - glDisable(GL_BLEND) //important otherwise no blending will happen
+	2. glBlendFunc(src, dest)
+		2.1. src = how the source RGBA factor is computed (default is GL_ONE) //src pixel values multiplied by 1 default
+		2.2. dest = how the destination RGBA factor is computed (default is GL_ZERO) //multiplied by 0 (essentailly by default src will be rendered)
+
+	3. glBlendEquation(mode)
+		3.1 mode = how we combine the src and dest colors (default GL_FUNC_ADD)

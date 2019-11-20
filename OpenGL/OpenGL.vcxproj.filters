@@ -17,6 +17,7 @@
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
     <None Include="ClassDiagram.cd" />
+    <None Include="Documents\12. OpenGL Math" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
@@ -88,5 +89,6 @@
     <Text Include="Documents\7. Vertex Arrays.txt" />
     <Text Include="Documents\8. Abstracting the OpenGL code.txt" />
     <Text Include="Documents\Setup.txt" />
+    <Text Include="Documents\11. OpenGL Blending.txt" />
   </ItemGroup>
 </Project>

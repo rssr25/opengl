@@ -5,6 +5,7 @@
 void Renderer::Clear() const
 {
 	GLCall(glClear(GL_COLOR_BUFFER_BIT));
+	GLCall(glClearColor(1.0, 1.0, 1.0, 1.0));
 }
 
 void Renderer::Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const 

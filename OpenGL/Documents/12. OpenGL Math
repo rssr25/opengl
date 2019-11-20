@@ -1,0 +1,1 @@
+GLM is a header file library, so we don't need to create linker directories and stuff. 

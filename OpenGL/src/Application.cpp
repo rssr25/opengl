@@ -66,7 +66,7 @@ int main(void)
 		shader.Bind();
 		shader.setUniform4f("u_Color", 0.0f, 0.0f, 0.5f, 1.0f);
 
-		Texture texture("res/Textures/squares.jpg");
+		Texture texture("res/Textures/jigsaw.png");
 		texture.Bind();
 		shader.setUniform1i("u_Texture", 0); //because we bound the texture to TEXTURE0 (Texture.cpp > line 36)
 

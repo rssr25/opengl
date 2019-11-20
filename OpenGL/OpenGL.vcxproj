@@ -84,7 +84,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src/vendor;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="Documents\12. OpenGL Math" />
     <None Include="res\shaders\Basic.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
   <ItemGroup>
     <Text Include="Documents\1. Calling the opengl functions.txt" />
     <Text Include="Documents\10. Textures in OpenGL.txt" />
+    <Text Include="Documents\11. OpenGL Blending.txt" />
     <Text Include="Documents\2. Triangle.txt" />
     <Text Include="Documents\3. Drawing the triangle.txt" />
     <Text Include="Documents\4. Index Buffers.txt" />
