@@ -1,0 +1,2 @@
+It is a gui library used in any kind of rendering api. It's a way to draw UI in the screen like buttons, textField and stuff. 
+The reason we are doing this is going forward it will be easy for us to do things, debugging purposes. 
