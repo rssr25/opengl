@@ -1,0 +1,24 @@
+Now that we have done so much, we have the ability to put all those concepts together and do 
+more complex things using them. So we have to setup some kind of tests/scenes which will help
+us understand that a particular functionality is indeed working as expected. These tests/scenes will
+demonstrate one concept working. 
+
+We are essentially making a library of examples of all the different concepts. To to that we need to 
+create an application first that is capable of doing that. The way that we are going to do is very simple. 
+
+we are going to have a menu in ImGui that will have all of those scenes/tests/example. When we click an
+option in the menu, it will open the scene specific controls and when we hit return key, it is going to go back
+to go back to the menu and destroys that scene. 
+
+Creating Tests in OpenGL:
+In our Test.cpp we have not made the functions pure virtual so that we don't have to implement all of the
+members in the classes that are extending Test.
+TestMenu class will do two thinngs  (Test.h)
+1. It needs to contain a collection of all the tests and we need to locate the different tests.
+So we need a pointer to a Test class instance but also want to store a name that we can provide that appears
+for the button of the test.
+
+Now what we want to do is when we start a test we don't need the Test class poiinter already created. We
+want to create a new Test class object for every test and destroy it when the test ends. So for that we
+are going to use a function (lambda) that returns a Test class pointer and takes nothing.
+Now we also need the currentTest's pointer. This is done by a private veriable m_CurrentTest (pointer to the address)
